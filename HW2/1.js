@@ -24,7 +24,7 @@ class Library {
 
    constructor(books) {
       if (!Array.isArray(books)) {
-         throw Error("Список книг не массив");
+         throw Error("Список книг не является массивом");
       }
       if (arr => arr.filter((item, index) => arr.indexOf(item) !== index).length === 0) {
          this.#books = books;
@@ -57,19 +57,14 @@ class Library {
    }
 }
 
-
-// const lib = new Library(["Букварь", "Вторая", "Зеленая", "Зеленая"]);
-// const lib = new Library("Букварь");
-const lib = new Library(["Букварь", "Вторая", "Зеленая"]);
+const lib = new Library(["Азбука", "Война и мир", "Анна Каренина"]);
 console.log(lib.allBooks());
 
-// lib.addBook("Вторая");
-lib.addBook("Еще одна");
+lib.addBook("Сказки Пушкина");
 console.log(lib.allBooks());
 
-lib.removeBook("Еще одна");
-// lib.removeBook("Какая то");
+lib.removeBook("Сказки Пушкина");
 console.log(lib.allBooks());
 
-console.log(lib.hasBook("Еще одна"));
-console.log(lib.hasBook("Вторая"));
+console.log(lib.hasBook("Сказки Пушкина"));
+console.log(lib.hasBook("Война и мир"));
